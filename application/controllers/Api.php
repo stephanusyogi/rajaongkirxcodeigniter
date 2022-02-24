@@ -49,6 +49,7 @@ class Api extends RestController {
             $response = curl_exec($curl);
             $provincebyid = json_decode($response, true);
             curl_close($curl);
+            header("Access-Control-Allow-Origin: *");
             $this->response( $provincebyid, 200 );
         }
     }
@@ -71,7 +72,7 @@ class Api extends RestController {
         $response = curl_exec($curl);
         $country = json_decode($response, true);
         curl_close($curl);
-
+        header("Access-Control-Allow-Origin: *");
         $this->response( $country, 200 );
     }
 
@@ -99,7 +100,7 @@ class Api extends RestController {
         $response = curl_exec($curl);
         $cost = json_decode($response, true);
         curl_close($curl);
-
+        header("Access-Control-Allow-Origin: *");
         $this->response( $cost, 200 );
     }
 }
