@@ -30,7 +30,7 @@ class Api extends RestController {
             $response = curl_exec($curl);
             $province = json_decode($response, true);
             curl_close($curl);
-
+            header("Access-Control-Allow-Origin: *");
             $this->response( $province, 200 );
         }else{
             $curl = curl_init();
